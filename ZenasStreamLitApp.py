@@ -26,4 +26,4 @@ cur.execute("SELECT DIRECT_URL  FROM catalog_for_website WHERE COLOR_OR_STYLE = 
 
 selectedDF=cur.fetchone()
 
-sl.write(selectedDF)
+sl.image(selectedDF[0],width=400,caption=product_caption)
