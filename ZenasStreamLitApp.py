@@ -13,5 +13,5 @@ with sf_conn.cursor() as cur:
 sf_conn.close()
 
 styleListDF=pd.DataFrame(styleList)
-
-styleSelected = sl.selectbox("Pick a sweatsuit color or style:", list(styleListDF.index))
+styleListDF=styleListDF.set_index('COLOR_OR_STYLE')
+#styleSelected = sl.selectbox("Pick a sweatsuit color or style:", list(styleListDF.index))
