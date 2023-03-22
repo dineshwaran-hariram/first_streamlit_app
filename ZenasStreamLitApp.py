@@ -19,6 +19,6 @@ sl.write(styleListDF)
 
 styleSelected = sl.selectbox("Pick a sweatsuit color or style:", list(styleListDF[0]))
 
-cur.execute("SELECT DIRECT_URL  FROM catalog_for_website WHERE COLOR_OR_STYLE = '"+ styleSelected +"'")
+cur.execute("SELECT DIRECT_URL  FROM catalog_for_website WHERE COLOR_OR_STYLE = '"+ styleSelected +"';")
 
 selectedDF=cur.fetchone()
