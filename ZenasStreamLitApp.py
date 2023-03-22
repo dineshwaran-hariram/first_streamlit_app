@@ -13,3 +13,5 @@ with sf_conn.cursor() as cur:
 sf_conn.close()
 
 styleListDF=pd.DataFrame(styleList)
+
+styleSelected = streamlit.selectbox("Pick a sweatsuit color or style:", list(styleListDF.index))
