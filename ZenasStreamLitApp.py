@@ -8,7 +8,7 @@ sl.header("Zena's Amazing Athleisure Catalog")
 
 sf_conn=snowflake.connector.connect(**sl.secrets["snowflake"])
 with sf_conn.cursor() as cur:
-  cur.execute("SELECT * FROM CATALOG")
+  cur.execute("SELECT * FROM catalog_for_website")
   catData = cur.fetchall()
 sf_conn.close()
 
