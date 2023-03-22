@@ -18,7 +18,7 @@ styleListDF=pd.DataFrame(styleList)
 #sl.write(styleListDF)
 color_list = styleListDF[0].values.tolist()
 
-styleSelected = sl.selectbox("Pick a sweatsuit color or style:", list(color_list))
+styleSelected = sl.multiselect("Pick a sweatsuit color or style:", list(color_list))
 
 product_caption = 'Our warm, comfortable, ' + styleSelected + ' sweatsuit'
 
