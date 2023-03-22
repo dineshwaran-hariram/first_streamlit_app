@@ -12,4 +12,4 @@ with sf_conn.cursor() as cur:
   styleList = cur.fetchall()
 sf_conn.close()
 
-sl.dataframe(styleList) 
+styleList=styleList.set_index('COLOR_OR_STYLE')
