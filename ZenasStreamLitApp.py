@@ -20,7 +20,7 @@ color_list = styleListDF[0].values.tolist()
 
 styleSelected = sl.multiselect("Pick a sweatsuit color or style:", list(color_list))
 
-product_caption = 'Our warm, comfortable, ' + styleSelected + ' sweatsuit'
+product_caption = 'Our warm, comfortable, ' + styleSelected[0] + ' sweatsuit'
 
 cur.execute("SELECT DIRECT_URL  FROM catalog_for_website WHERE COLOR_OR_STYLE = '"+ styleSelected +"';")
 
