@@ -6,7 +6,7 @@ import snowflake.connector as sflake
 sl.header("Zena's Amazing Athleisure Catalog")
 
 
-sf_conn=sflake.connect(**streamlit.secrets["snowflake"])
+sf_conn=sflake.connector.connect(**sl.secrets["snowflake"])
 with sf_conn.cursor() as cur:
   cur.execute("SELECT * FROM CATALOG")
 catData = cur.fetchall()
