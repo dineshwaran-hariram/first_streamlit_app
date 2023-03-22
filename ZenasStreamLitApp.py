@@ -16,8 +16,9 @@ styleListDF=pd.DataFrame(styleList)
 #styleListDF=styleListDF.set_index('COLOR_OR_STYLE')
 
 sl.write(styleListDF)
+color_list = styleListDF[0].values.tolist()
 
-styleSelected = sl.selectbox("Pick a sweatsuit color or style:", list(styleListDF[0]))
+styleSelected = sl.selectbox("Pick a sweatsuit color or style:", list(color_list))
 
 product_caption = 'Our warm, comfortable, ' + styleSelected + ' sweatsuit'
 
