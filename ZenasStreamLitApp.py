@@ -12,4 +12,4 @@ with sf_conn.cursor() as cur:
   styleList = cur.fetchall()
 sf_conn.close()
 
-styleListDF=pd.dataframe(styleList)
+styleListDF=pd.DataFrame(styleList)
