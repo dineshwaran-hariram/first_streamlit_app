@@ -12,4 +12,4 @@ with sf_conn.cursor() as cur:
 catData = cur.fetchall()
 sf_conn.close()
 
-sl.dataframe(catData)
+sl.dataframe(catData) 
