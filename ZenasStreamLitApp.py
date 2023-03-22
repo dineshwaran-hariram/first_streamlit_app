@@ -10,10 +10,15 @@ sf_conn=snowflake.connector.connect(**sl.secrets["snowflake"])
 with sf_conn.cursor() as cur:
   cur.execute("SELECT COLOR_OR_STYLE FROM catalog_for_website")
   styleList = cur.fetchall()
-sf_conn.close()
+#sf_conn.close()
 
 styleListDF=pd.DataFrame(styleList)
 #styleListDF=styleListDF.set_index('COLOR_OR_STYLE')
-styleSelected = sl.selectbox("Pick a sweatsuit color or style:", list(styleListDF[0]))
 
 sl.write(styleListDF)
+
+styleSelected = sl.selectbox("Pick a sweatsuit color or style:", list(styleListDF[0]))
+
+cur.execute("SELECT DIRECT_URL  FROM catalog_for_website WHERE COLOR_OR_STYLE = '"+ styleSelected +"'")
+
+selectedDF=cur.fetchone()
